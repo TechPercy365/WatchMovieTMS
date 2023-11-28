@@ -43,17 +43,17 @@ CREATE Table [BookMovie](
 	userInfoID int,
 	Id_Movie int,
 	movieSeat int,
-	quantity int,
 	totalPayment decimal(9,2)
 )
 
 SET IDENTITY_INSERT [dbo].[Role] ON 
-INSERT [dbo].[Role] (userType, [roleName], [roleDescription]) VALUES (1, N'Student', N'Student ')
-INSERT [dbo].[Role] (userType, [roleName], [roleDescription]) VALUES (2, N'Teacher', N'Teacher')
-INSERT [dbo].[Role] (userType, [roleName], [roleDescription]) VALUES (3, N'Admin', N'Admin')
+INSERT [dbo].[Role] (userType, [roleName], [roleDescription]) VALUES (1, N'Customer', N'Customer ')
+INSERT [dbo].[Role] (userType, [roleName], [roleDescription]) VALUES (2, N'Admin', N'Admin')
 SET IDENTITY_INSERT [dbo].[Role] OFF
 
+DROP TABLE [dbo].[Role]
 
+-- PROCEDURES ABOUT USERS
 CREATE PROCEDURE sp_Register 
 @userInfoID int, @firstName_Cus varchar(50), @lastName_Cus varchar(50), @phoneNum int, @email varchar(50), 
 @userID int, @userName varchar(50), @password varchar(16), @userType int AS
@@ -64,6 +64,9 @@ VALUES(@IDNum, @firstName_Cus, @lastName_Cus, @phoneNum, @email)
 INSERT INTO [User] VALUES (@IDNum, @userName, @password, @userType)
 SET @IDNum = @IDNum + 1
 
+
+
+-- VIEWS ABOUT USERS
 CREATE VIEW vw_UserInfo AS
 SELECT firstName_Cus as 'First Name', lastName_Cus as 'Last Name', 
 userName as 'Username', userType as 'Role', phoneNum as 'Phone Number', email as 'Email'
@@ -71,10 +74,19 @@ FROM [UserInformation] ui
 JOIN [User] us ON us.userID = ui.userID 
 
 CREATE VIEW vw_Users AS
-SELECT * FROM [User]
+SELECT * FROM [User] us
+JOIN [UserInformation] ui ON us.userID = ui.userID
+ORDER BY us.userID ASC
 
 --CREATE VIEW viewUsersAdm
 --CREATE VIEW viewMovies
 --CREATE VIEW viewHistory
 --CREATE VIEW viewReceipt
+
+SELECT * FROM [User]
+SELECT * FROM [UserInformation]
+SELECT * FROM [Role]
+SELECT * FROM [Movies]
+SELECT * FROM [BookMovie]
+
 
