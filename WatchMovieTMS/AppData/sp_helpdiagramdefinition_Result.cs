@@ -10,20 +10,10 @@
 namespace WatchMovieTMS.AppData
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class User
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public User()
-        {
-            this.UserInformation = new HashSet<UserInformation>();
-        }
-    
-        public int userID { get; set; }
-        public string userName { get; set; }
-        public string password { get; set; }
-        public int userType { get; set; }
-    
-        public virtual ICollection<UserInformation> UserInformation { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

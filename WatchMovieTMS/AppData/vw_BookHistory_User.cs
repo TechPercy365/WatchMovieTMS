@@ -12,18 +12,14 @@ namespace WatchMovieTMS.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class vw_BookHistory_User
     {
-        public User()
-        {
-            this.UserInformation = new HashSet<UserInformation>();
-        }
-    
-        public int userID { get; set; }
-        public string userName { get; set; }
-        public string password { get; set; }
-        public int userType { get; set; }
-    
-        public virtual ICollection<UserInformation> UserInformation { get; set; }
+        public int Booking_ID { get; set; }
+        public string Movie { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Payment { get; set; }
+        public Nullable<decimal> Amount_Pay { get; set; }
+        public Nullable<decimal> Change { get; set; }
     }
 }

@@ -16,5 +16,23 @@ namespace WatchMovieTMS.Forms
         {
             InitializeComponent();
         }
+
+        private void btn_Home_Click(object sender, EventArgs e)
+        {
+            new LoginPage().Show();
+            this.Hide();
+        }
+
+        private void btn_BookTicket_Click(object sender, EventArgs e)
+        {
+            new BookingMoviePage().Show();
+            this.Hide();
+        }
+
+        private void btn_bookHistory_Click(object sender, EventArgs e)
+        {
+            new BookHistory().Show();
+            this.Hide();
+        }
     }
 }

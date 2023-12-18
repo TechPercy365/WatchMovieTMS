@@ -12,18 +12,12 @@ namespace WatchMovieTMS.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class sysdiagrams
     {
-        public User()
-        {
-            this.UserInformation = new HashSet<UserInformation>();
-        }
-    
-        public int userID { get; set; }
-        public string userName { get; set; }
-        public string password { get; set; }
-        public int userType { get; set; }
-    
-        public virtual ICollection<UserInformation> UserInformation { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

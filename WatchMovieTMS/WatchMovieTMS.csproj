@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,15 +53,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppData\Role.cs" />
-    <Compile Include="AppData\User.cs" />
-    <Compile Include="AppData\UserInformation.cs" />
+    <Compile Include="AppData\BookMovie.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\Movies.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\MovieTickeySystemModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieTickeySystemModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\MovieTickeySystemModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\MovieTickeySystemModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieTickeySystemModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\Role.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sp_helpdiagrams_Result.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sysdiagrams.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\User.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\UserInformation.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\view_AllUsers.cs" />
-    <Compile Include="Forms\BookMoviePage.cs">
+    <Compile Include="AppData\vw_BookHistory_User.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_UserInfo.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_Users.cs">
+      <DependentUpon>MovieTickeySystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin_HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BookMoviePage.Designer.cs">
-      <DependentUpon>BookMoviePage.cs</DependentUpon>
+    <Compile Include="Forms\Admin_HomePage.Designer.cs">
+      <DependentUpon>Admin_HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BookHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookHistory.Designer.cs">
+      <DependentUpon>BookHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BookingMoviePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookingMoviePage.Designer.cs">
+      <DependentUpon>BookingMoviePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HomePage.cs">
       <SubType>Form</SubType>
@@ -85,8 +149,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Utils\Constant.cs" />
-    <EmbeddedResource Include="Forms\BookMoviePage.resx">
-      <DependentUpon>BookMoviePage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin_HomePage.resx">
+      <DependentUpon>Admin_HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookHistory.resx">
+      <DependentUpon>BookHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookingMoviePage.resx">
+      <DependentUpon>BookingMoviePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -110,6 +180,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="AppData\MovieTickeySystemModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MovieTickeySystemModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AppData\MovieTickeySystemModel.edmx.diagram">
+      <DependentUpon>MovieTickeySystemModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,6 +203,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WatchMovie_Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppData\MovieTickeySystemModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MovieTickeySystemModel.Context.cs</LastGenOutput>
+      <DependentUpon>MovieTickeySystemModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="AppData\MovieTickeySystemModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MovieTickeySystemModel.edmx</DependentUpon>
+      <LastGenOutput>MovieTickeySystemModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\rampage.jpg" />
+    <None Include="Resources\sawX.jpg" />
+    <None Include="Resources\johnWick.jpg" />
+    <None Include="Resources\jumanji.jpg" />
+    <None Include="Resources\avengersEndgame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

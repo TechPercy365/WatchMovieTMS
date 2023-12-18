@@ -16,5 +16,11 @@ namespace WatchMovieTMS.Forms
         {
             InitializeComponent();
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            new LoginPage().Show();
+            this.Hide();
+        }
     }
 }
