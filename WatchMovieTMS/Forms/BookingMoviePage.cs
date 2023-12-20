@@ -33,51 +33,11 @@ namespace WatchMovieTMS.Forms
         {
            
            
-        }
-
-        private void btn_priceAve_Click(object sender, EventArgs e)
-        {
-            //int movie = 1;
-            //double cost = 99.00;           
-            //Transaction(cost, movie);
-
-        }        
-
-        private void btn_priceJohn_Click(object sender, EventArgs e)
-        {
-            //int movie = 2;
-            //double cost = 95.00;
-            //Transaction(cost, movie);
-        }
-
-        private void btn_priceJum_Click(object sender, EventArgs e)
-        {
-            //int movie = 3;
-            //double cost = 70.00;
-            //Transaction(cost, movie);
-        }
-
-        private void btn_priceSaw_Click(object sender, EventArgs e)
-        {
-            //int movie = 4;
-            //double cost = 70.00;
-            //Transaction(cost, movie);
-        }
-
-        private void btn_priceRampage_Click(object sender, EventArgs e)
-        {
-            //int movie = 5;
-            //double cost = 85.00;
-            //Transaction(cost, movie);
-        }
+        }            
 
         public void Transaction(double cost, int movie)
         {
 
-            //int quantity = Convert.ToInt32(txt_Quantity);
-            //double payment = cost * quantity;
-            //txt_Payment.Text = payment.ToString();
-            //int movieInfo = movie;
         }
 
         private void BookMovie(int userInfoID, int movieId, int quantity, int amount, int totalPayment, int totalChange)

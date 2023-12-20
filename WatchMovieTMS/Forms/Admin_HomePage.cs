@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,6 @@ namespace WatchMovieTMS.Forms
     {
         SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS; Initial Catalog=movieTicketManagement; Integrated Security=true");
         UserRepository userRepo;
-        ErrorProvider errorProviderCustom;
         int? userSelectedId = null;
 
         private movieTicketManagementEntities db;
@@ -61,17 +61,41 @@ namespace WatchMovieTMS.Forms
         }
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            //con.Open();
-            //SqlCommand cmd = new SqlCommand("sp_addUsers", con);
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.Add("@userName", SqlDbType.VarChar).Value = txtA_Username.Text;
-            //cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = txtA_Password.Text;
-            //cmd.Parameters.Add("@userType", SqlDbType.Int).Value = cmb_UserType.SelectedItem;
-            //cmd.ExecuteNonQuery();
-            //MessageBox.Show("User Added");
-            //con.Close();
-            //txtA_Username.Text = "";
-            //txtA_Password.Text = "";
+            //String username = txtA_Username.Text;
+            //String pass = txtA_Password.Text;
+
+            //String strOutputMsg = "";
+            //// Validation not allow empty or null value
+            //if (String.IsNullOrEmpty(username))
+            //{
+            //    MessageBox.Show("Empty Field. Please Fill up");
+            //    return;
+            //}
+            //else
+            //// Validation not allow empty or null value
+            //if (String.IsNullOrEmpty(pass))
+            //{
+            //    MessageBox.Show("Empty Field. Please Fill up");
+            //    return;
+            //}                       
+
+            ////Create new object of USER_ACCOUNT
+            //User newUserAcc = new User();
+            //newUserAcc.userName = txtA_Username.Text;
+            //newUserAcc.password = txtA_Password.Text;            
+
+            //ErrorCode retValue = userRepo.NewUser(newUserAcc, ref strOutputMsg);
+            //if (retValue == ErrorCode.Success)
+            //{                                
+            //    txtA_Username.Clear();
+            //    txtA_Password.Clear();
+            //}
+            //else
+            //{
+            //    // error 
+            //    MessageBox.Show(strOutputMsg, "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
         }
+
     }
 }

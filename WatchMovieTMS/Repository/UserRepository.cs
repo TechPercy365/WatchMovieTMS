@@ -104,6 +104,26 @@ namespace WatchMovieTMS
             }
         }
 
+        public ErrorCode CreateUserUsingStoredProf(String username, String password, int role, ref String szResponse)
+        {
+            try
+            {
+                using (db = new movieTicketManagementEntities())
+                {
+                    // Call the create stored procedure
+                    //
+                    db.sp_addUsers(username, password, role);
+                    szResponse = "Created";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception ex)
+            {
+                szResponse = ex.Message;
+                return ErrorCode.Error;
+            }
+        }
+
 
     }
 }

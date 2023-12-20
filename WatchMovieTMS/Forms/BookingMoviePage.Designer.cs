@@ -36,11 +36,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_BookTicket = new System.Windows.Forms.Button();
-            this.btn_priceRampage = new System.Windows.Forms.Button();
-            this.btn_priceSaw = new System.Windows.Forms.Button();
-            this.btn_priceJum = new System.Windows.Forms.Button();
-            this.btn_priceJohn = new System.Windows.Forms.Button();
-            this.btn_priceAve = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,6 +46,11 @@
             this.txt_Change = new System.Windows.Forms.TextBox();
             this.txt_Amount = new System.Windows.Forms.TextBox();
             this.txt_Payment = new System.Windows.Forms.TextBox();
+            this.chk_Ave = new System.Windows.Forms.CheckBox();
+            this.chk_John = new System.Windows.Forms.CheckBox();
+            this.chk_Jum = new System.Windows.Forms.CheckBox();
+            this.chk_Saw = new System.Windows.Forms.CheckBox();
+            this.chk_Ram = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -94,14 +94,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chk_Ram);
+            this.groupBox1.Controls.Add(this.chk_Saw);
+            this.groupBox1.Controls.Add(this.chk_Jum);
+            this.groupBox1.Controls.Add(this.chk_John);
+            this.groupBox1.Controls.Add(this.chk_Ave);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.btn_BookTicket);
-            this.groupBox1.Controls.Add(this.btn_priceRampage);
-            this.groupBox1.Controls.Add(this.btn_priceSaw);
-            this.groupBox1.Controls.Add(this.btn_priceJum);
-            this.groupBox1.Controls.Add(this.btn_priceJohn);
-            this.groupBox1.Controls.Add(this.btn_priceAve);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -155,76 +155,6 @@
             this.btn_BookTicket.Text = "Book Ticket";
             this.btn_BookTicket.UseVisualStyleBackColor = false;
             this.btn_BookTicket.Click += new System.EventHandler(this.btn_BookTicket_Click);
-            // 
-            // btn_priceRampage
-            // 
-            this.btn_priceRampage.BackColor = System.Drawing.Color.Green;
-            this.btn_priceRampage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_priceRampage.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_priceRampage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_priceRampage.Location = new System.Drawing.Point(610, 213);
-            this.btn_priceRampage.Name = "btn_priceRampage";
-            this.btn_priceRampage.Size = new System.Drawing.Size(88, 30);
-            this.btn_priceRampage.TabIndex = 0;
-            this.btn_priceRampage.Text = "P 85.00";
-            this.btn_priceRampage.UseVisualStyleBackColor = false;
-            this.btn_priceRampage.Click += new System.EventHandler(this.btn_priceRampage_Click);
-            // 
-            // btn_priceSaw
-            // 
-            this.btn_priceSaw.BackColor = System.Drawing.Color.Green;
-            this.btn_priceSaw.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_priceSaw.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_priceSaw.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_priceSaw.Location = new System.Drawing.Point(463, 213);
-            this.btn_priceSaw.Name = "btn_priceSaw";
-            this.btn_priceSaw.Size = new System.Drawing.Size(88, 30);
-            this.btn_priceSaw.TabIndex = 0;
-            this.btn_priceSaw.Text = "P 70.00";
-            this.btn_priceSaw.UseVisualStyleBackColor = false;
-            this.btn_priceSaw.Click += new System.EventHandler(this.btn_priceSaw_Click);
-            // 
-            // btn_priceJum
-            // 
-            this.btn_priceJum.BackColor = System.Drawing.Color.Green;
-            this.btn_priceJum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_priceJum.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_priceJum.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_priceJum.Location = new System.Drawing.Point(317, 213);
-            this.btn_priceJum.Name = "btn_priceJum";
-            this.btn_priceJum.Size = new System.Drawing.Size(88, 30);
-            this.btn_priceJum.TabIndex = 0;
-            this.btn_priceJum.Text = "P 70.00";
-            this.btn_priceJum.UseVisualStyleBackColor = false;
-            this.btn_priceJum.Click += new System.EventHandler(this.btn_priceJum_Click);
-            // 
-            // btn_priceJohn
-            // 
-            this.btn_priceJohn.BackColor = System.Drawing.Color.Green;
-            this.btn_priceJohn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_priceJohn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_priceJohn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_priceJohn.Location = new System.Drawing.Point(177, 213);
-            this.btn_priceJohn.Name = "btn_priceJohn";
-            this.btn_priceJohn.Size = new System.Drawing.Size(88, 30);
-            this.btn_priceJohn.TabIndex = 0;
-            this.btn_priceJohn.Text = "P 95.00";
-            this.btn_priceJohn.UseVisualStyleBackColor = false;
-            this.btn_priceJohn.Click += new System.EventHandler(this.btn_priceJohn_Click);
-            // 
-            // btn_priceAve
-            // 
-            this.btn_priceAve.BackColor = System.Drawing.Color.Green;
-            this.btn_priceAve.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_priceAve.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_priceAve.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_priceAve.Location = new System.Drawing.Point(34, 213);
-            this.btn_priceAve.Name = "btn_priceAve";
-            this.btn_priceAve.Size = new System.Drawing.Size(88, 30);
-            this.btn_priceAve.TabIndex = 0;
-            this.btn_priceAve.Text = "P 99.00";
-            this.btn_priceAve.UseVisualStyleBackColor = false;
-            this.btn_priceAve.Click += new System.EventHandler(this.btn_priceAve_Click);
             // 
             // pictureBox3
             // 
@@ -327,6 +257,66 @@
             this.txt_Payment.Size = new System.Drawing.Size(156, 29);
             this.txt_Payment.TabIndex = 2;
             // 
+            // chk_Ave
+            // 
+            this.chk_Ave.AutoSize = true;
+            this.chk_Ave.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chk_Ave.ForeColor = System.Drawing.Color.Green;
+            this.chk_Ave.Location = new System.Drawing.Point(32, 213);
+            this.chk_Ave.Name = "chk_Ave";
+            this.chk_Ave.Size = new System.Drawing.Size(89, 24);
+            this.chk_Ave.TabIndex = 5;
+            this.chk_Ave.Text = "P 99.00";
+            this.chk_Ave.UseVisualStyleBackColor = false;
+            // 
+            // chk_John
+            // 
+            this.chk_John.AutoSize = true;
+            this.chk_John.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chk_John.ForeColor = System.Drawing.Color.Green;
+            this.chk_John.Location = new System.Drawing.Point(179, 213);
+            this.chk_John.Name = "chk_John";
+            this.chk_John.Size = new System.Drawing.Size(89, 24);
+            this.chk_John.TabIndex = 5;
+            this.chk_John.Text = "P 90.00";
+            this.chk_John.UseVisualStyleBackColor = false;
+            // 
+            // chk_Jum
+            // 
+            this.chk_Jum.AutoSize = true;
+            this.chk_Jum.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chk_Jum.ForeColor = System.Drawing.Color.Green;
+            this.chk_Jum.Location = new System.Drawing.Point(321, 213);
+            this.chk_Jum.Name = "chk_Jum";
+            this.chk_Jum.Size = new System.Drawing.Size(89, 24);
+            this.chk_Jum.TabIndex = 5;
+            this.chk_Jum.Text = "P 70.00";
+            this.chk_Jum.UseVisualStyleBackColor = false;
+            // 
+            // chk_Saw
+            // 
+            this.chk_Saw.AutoSize = true;
+            this.chk_Saw.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chk_Saw.ForeColor = System.Drawing.Color.Green;
+            this.chk_Saw.Location = new System.Drawing.Point(465, 213);
+            this.chk_Saw.Name = "chk_Saw";
+            this.chk_Saw.Size = new System.Drawing.Size(89, 24);
+            this.chk_Saw.TabIndex = 5;
+            this.chk_Saw.Text = "P 70.00";
+            this.chk_Saw.UseVisualStyleBackColor = false;
+            // 
+            // chk_Ram
+            // 
+            this.chk_Ram.AutoSize = true;
+            this.chk_Ram.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chk_Ram.ForeColor = System.Drawing.Color.Green;
+            this.chk_Ram.Location = new System.Drawing.Point(611, 213);
+            this.chk_Ram.Name = "chk_Ram";
+            this.chk_Ram.Size = new System.Drawing.Size(89, 24);
+            this.chk_Ram.TabIndex = 5;
+            this.chk_Ram.Text = "P 85.00";
+            this.chk_Ram.UseVisualStyleBackColor = false;
+            // 
             // BookingMoviePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,15 +355,15 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Amount;
-        private System.Windows.Forms.Button btn_priceAve;
-        private System.Windows.Forms.Button btn_priceRampage;
-        private System.Windows.Forms.Button btn_priceSaw;
-        private System.Windows.Forms.Button btn_priceJum;
-        private System.Windows.Forms.Button btn_priceJohn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Change;
         private System.Windows.Forms.TextBox txt_Payment;
         private System.Windows.Forms.Button btn_BookTicket;
+        private System.Windows.Forms.CheckBox chk_John;
+        private System.Windows.Forms.CheckBox chk_Ave;
+        private System.Windows.Forms.CheckBox chk_Ram;
+        private System.Windows.Forms.CheckBox chk_Saw;
+        private System.Windows.Forms.CheckBox chk_Jum;
     }
 }
